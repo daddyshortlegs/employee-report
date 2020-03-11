@@ -6,7 +6,8 @@ class EmployeeReport:
         if len(self.employees) == 0:
             return []
 
-        return ["Mike"]
+        old_enough = list(filter(lambda employee: (employee.age > 18), self.employees))
+        return list(map(lambda employee: (employee.name), old_enough))
 
 
 class Employee:

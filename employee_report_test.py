@@ -22,5 +22,17 @@ class MyTestCase(unittest.TestCase):
 
         self.assertSequenceEqual([], result)
 
+    def test_returns_other_employees_over_18(self):
+        employees = [Employee("Jon", 43),
+                     Employee("Sepp", 18),
+                     Employee("Nina", 15),
+                     Employee("Mike", 51)]
+
+        report = EmployeeReport(employees)
+        result = report.generate()
+
+        self.assertSequenceEqual(["Jon", "Mike"], result)
+
+
 if __name__ == '__main__':
     unittest.main()

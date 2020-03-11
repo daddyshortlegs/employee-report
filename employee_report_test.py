@@ -10,11 +10,17 @@ class MyTestCase(unittest.TestCase):
                      Employee("Mike", 51)]
 
         report = EmployeeReport(employees)
-
         result = report.generate()
 
         self.assertSequenceEqual(["Mike"], result)
 
+    def test_returns_no_employees(self):
+        employees = []
+
+        report = EmployeeReport(employees)
+        result = report.generate()
+
+        self.assertSequenceEqual([], result)
 
 if __name__ == '__main__':
     unittest.main()

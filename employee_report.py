@@ -3,6 +3,9 @@ class EmployeeReport:
         self.employees = employees
 
     def generate(self):
+        if len(self.employees) == 0:
+            return []
+
         return ["Mike"]
 
 

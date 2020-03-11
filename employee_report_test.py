@@ -31,9 +31,9 @@ class MyTestCase(unittest.TestCase):
         report = EmployeeReport(employees)
         result = report.generate()
 
-        self.assertSequenceEqual(["JON", "MIKE"], result)
+        self.assertSequenceEqual(["MIKE", "JON"], result)
 
-    def test_in_alphabetical_order_capitalised(self):
+    def test_in_alphabetical_order_descending_capitalised(self):
         employees = [Employee("Jon", 43),
                      Employee("Sepp", 43),
                      Employee("Nina", 43),
@@ -42,7 +42,7 @@ class MyTestCase(unittest.TestCase):
         report = EmployeeReport(employees)
         result = report.generate()
 
-        self.assertSequenceEqual(["JON", "MIKE", "NINA", "SEPP"], result)
+        self.assertSequenceEqual(["SEPP", "NINA", "MIKE", "JON"], result)
 
 
 if __name__ == '__main__':

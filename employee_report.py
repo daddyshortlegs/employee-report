@@ -3,11 +3,8 @@ class EmployeeReport:
         self.employees = employees
 
     def generate(self):
-        if len(self.employees) == 0:
-            return []
-
         old_enough = list(filter(lambda employee: (employee.age > 18), self.employees))
-        return sorted(list(map(lambda employee: employee.name.upper(), old_enough)))
+        return sorted(list(map(lambda employee: employee.name.upper(), old_enough)), reverse=True)
 
 
 class Employee:

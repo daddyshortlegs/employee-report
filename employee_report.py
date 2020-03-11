@@ -7,7 +7,7 @@ class EmployeeReport:
             return []
 
         old_enough = list(filter(lambda employee: (employee.age > 18), self.employees))
-        return list(map(lambda employee: (employee.name), old_enough))
+        return sorted(list(map(lambda employee: employee.name.upper(), old_enough)))
 
 
 class Employee:
